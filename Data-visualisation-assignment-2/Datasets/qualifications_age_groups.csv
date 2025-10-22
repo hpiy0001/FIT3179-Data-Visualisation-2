@@ -1,0 +1,109 @@
+﻿Age,Qualification,Count
+16 and under,Postgraduate by Research,0
+16 and under,Postgraduate by Coursework,3
+16 and under,Bachelor,0
+16 and under,Sub-Bachelor,1204
+16 and under,Enabling Courses,1020
+16 and under,Non-award Courses,2878
+17,Postgraduate by Research,0
+17,Postgraduate by Coursework,28
+17,Bachelor,42535
+17,Sub-Bachelor,5303
+17,Enabling Courses,3134
+17,Non-award Courses,1383
+18,Postgraduate by Research,0
+18,Postgraduate by Coursework,57
+18,Bachelor,136623
+18,Sub-Bachelor,13797
+18,Enabling Courses,3909
+18,Non-award Courses,350
+19,Postgraduate by Research,3
+19,Postgraduate by Coursework,0
+19,Bachelor,158447
+19,Sub-Bachelor,12423
+19,Enabling Courses,2270
+19,Non-award Courses,1262
+20,Postgraduate by Research,56
+20,Postgraduate by Coursework,4631
+20,Bachelor,149185
+20,Sub-Bachelor,7438
+20,Enabling Courses,1506
+20,Non-award Courses,2624
+21,Postgraduate by Research,0
+21,Postgraduate by Coursework,23595
+21,Bachelor,122718
+21,Sub-Bachelor,4934
+21,Enabling Courses,0
+21,Non-award Courses,2029
+22,Postgraduate by Research,1136
+22,Postgraduate by Coursework,47132
+22,Bachelor,81881
+22,Sub-Bachelor,3402
+22,Enabling Courses,890
+22,Non-award Courses,1120
+23,Postgraduate by Research,2207
+23,Postgraduate by Coursework,59339
+23,Bachelor,55843
+23,Sub-Bachelor,2600
+23,Enabling Courses,775
+23,Non-award Courses,796
+24,Postgraduate by Research,3041
+24,Postgraduate by Coursework,48647
+24,Bachelor,35616
+24,Sub-Bachelor,1938
+24,Enabling Courses,619
+24,Non-award Courses,647
+25,Postgraduate by Research,3972
+25,Postgraduate by Coursework,39477
+25,Bachelor,25187
+25,Sub-Bachelor,1778
+25,Enabling Courses,510
+25,Non-award Courses,413
+26,Postgraduate by Research,4460
+26,Postgraduate by Coursework,32126
+26,Bachelor,19725
+26,Sub-Bachelor,1528
+26,Enabling Courses,424
+26,Non-award Courses,301
+27,Postgraduate by Research,4293
+27,Postgraduate by Coursework,26174
+27,Bachelor,15608
+27,Sub-Bachelor,1332
+27,Enabling Courses,364
+27,Non-award Courses,277
+28,Postgraduate by Research,4116
+28,Postgraduate by Coursework,21883
+28,Bachelor,12937
+28,Sub-Bachelor,1236
+28,Enabling Courses,332
+28,Non-award Courses,222
+29,Postgraduate by Research,3661
+29,Postgraduate by Coursework,18482
+29,Bachelor,11411
+29,Sub-Bachelor,0
+29,Enabling Courses,0
+29,Non-award Courses,236
+30-39,Postgraduate by Research,22760
+30-39,Postgraduate by Coursework,111483
+30-39,Bachelor,71078
+30-39,Sub-Bachelor,8749
+30-39,Enabling Courses,2324
+30-39,Non-award Courses,1750
+40-49,Postgraduate by Research,9529
+40-49,Postgraduate by Coursework,51721
+40-49,Bachelor,30994
+40-49,Sub-Bachelor,5215
+40-49,Enabling Courses,1013
+40-49,Non-award Courses,964
+50-59,Postgraduate by Research,4645
+50-59,Postgraduate by Coursework,19031
+50-59,Bachelor,10595
+50-59,Sub-Bachelor,3005
+50-59,Enabling Courses,387
+50-59,Non-award Courses,456
+60+,Postgraduate by Research,2324
+60+,Postgraduate by Coursework,3904
+60+,Bachelor,2867
+60+,Sub-Bachelor,1412
+60+,Enabling Courses,87
+60+,Non-award Courses,155

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 950,
+  "height": 450,
+  "data": {"url": "industryqualification.csv"},
+  "params": [{
+    "name": "qualification_select",
+    "value": "Bachelor Degree",
+    "bind": {
+      "input": "select",
+      "options": [
+        "Postgraduate Degree",
+        "Graduate Diploma or Certificate",
+        "Bachelor Degree",
+        "Advanced Diploma or Diploma",
+        "Certificate III or IV",
+        "Other non-school qualification",
+        "Without non-school qualification"
+      ],
+      "name": "Select Education Level: "
+    }
+  }],
+  "transform": [
+    {"filter": "datum.Qualification == qualification_select"}
+  ],
+  "mark": {"type": "bar", "color": "#1f77b4"},
+  "encoding": {
+    "x": {
+      "field": "Industry",
+      "type": "nominal",
+      "title": "Industry",
+      "sort": "-y",
+      "axis": {
+        "labelAngle": -45,
+        "labelLimit": 200
+      }
+    },
+    "y": {
+      "field": "Count",
+      "type": "quantitative",
+      "title": "Average Weekly Earnings ($)",
+      "axis": {"format": "$,.0f"}
+    },
+    "tooltip": [
+      {"field": "Industry", "title": "Industry"},
+      {"field": "Qualification", "title": "Education Level"},
+      {"field": "Count", "title": "Weekly Earnings", "format": "$,.2f"}
+    ]
+  }
+}

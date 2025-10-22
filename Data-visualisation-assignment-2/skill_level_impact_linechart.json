@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 950,
+  "height": 500,
+  "data": {"url": "skill_level_impact.csv"},
+  "mark": {
+    "type": "line",
+    "point": {
+      "size": 100,
+      "filled": true
+    },
+    "color": "#1f77b4"
+  },
+  "encoding": {
+    "x": {
+      "field": "Skill_Level",
+      "type": "ordinal",
+      "title": "Skill Level"
+    },
+    "y": {
+      "field": "Earnings",
+      "type": "quantitative",
+      "title": "Average Weekly Earnings ($)",
+      "axis": {"format": "$,.0f"},
+      "scale": {"zero": true}
+    },
+    "tooltip": [
+      {"field": "Skill_Level", "title": "Skill Level"},
+      {"field": "Earnings", "title": "Earnings", "format": "$,.0f"}
+    ]
+  }
+}

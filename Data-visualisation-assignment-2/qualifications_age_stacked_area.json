@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 500,
+  "data": {"url": "age_qualification_enrollment.csv"},
+  "transform": [
+    {
+      "calculate": "datum.Age == '16 and under' ? 1 : datum.Age == '17' ? 2 : datum.Age == '18' ? 3 : datum.Age == '19' ? 4 : datum.Age == '20' ? 5 : datum.Age == '21' ? 6 : datum.Age == '22' ? 7 : datum.Age == '23' ? 8 : datum.Age == '24' ? 9 : datum.Age == '25' ? 10 : datum.Age == '26' ? 11 : datum.Age == '27' ? 12 : datum.Age == '28' ? 13 : datum.Age == '29' ? 14 : datum.Age == '30-39' ? 15 : datum.Age == '40-49' ? 16 : datum.Age == '50-59' ? 17 : 18",
+      "as": "Age_Order"
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "line": true,
+    "point": false
+  },
+  "encoding": {
+    "x": {
+      "field": "Age_Order",
+      "type": "ordinal",
+      "title": "Age",
+      "axis": {
+        "labelExpr": "datum.value == 1 ? '≤16' : datum.value == 2 ? '17' : datum.value == 3 ? '18' : datum.value == 4 ? '19' : datum.value == 5 ? '20' : datum.value == 6 ? '21' : datum.value == 7 ? '22' : datum.value == 8 ? '23' : datum.value == 9 ? '24' : datum.value == 10 ? '25' : datum.value == 11 ? '26' : datum.value == 12 ? '27' : datum.value == 13 ? '28' : datum.value == 14 ? '29' : datum.value == 15 ? '30-39' : datum.value == 16 ? '40-49' : datum.value == 17 ? '50-59' : '60+'"
+      }
+    },
+    "y": {
+      "field": "Count",
+      "type": "quantitative",
+      "title": "Number of Students",
+      "axis": {"format": ","}
+    },
+    "color": {
+      "field": "Qualification",
+      "type": "nominal",
+      "title": "Qualification Type",
+      "scale": {
+        "domain": [
+          "Bachelor",
+          "Postgraduate by Coursework",
+          "Postgraduate by Research",
+          "Sub-Bachelor",
+          "Enabling Courses",
+          "Non-award Courses"
+        ],
+        "range": ["#2c5282", "#4a90e2", "#1f77b4", "#27ae60", "#e67e22", "#95a5a6"]
+      },
+      "legend": {"orient": "right"}
+    },
+    "order": {
+      "field": "Qualification",
+      "type": "nominal",
+      "sort": ["Non-award Courses", "Enabling Courses", "Sub-Bachelor", "Postgraduate by Research", "Postgraduate by Coursework", "Bachelor"]
+    },
+    "tooltip": [
+      {"field": "Age", "title": "Age"},
+      {"field": "Qualification", "title": "Qualification"},
+      {"field": "Count", "title": "Students", "format": ","}
+    ]
+  }
+}

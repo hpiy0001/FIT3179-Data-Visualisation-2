@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "employment_status.csv"
+  },
+  "title": "Employment Status by Education Qualification",
+  "width": 800,
+  "height": 800,
+  "transform": [
+    {
+      "calculate": "indexof(['Postgraduate Degree', 'Graduate Diploma', 'Bachelor Degree', 'Advanced Diploma', 'Certificate III/IV', 'Certificate I/II', 'Certificate nfd'], datum.Qualification)",
+      "as": "qual_order"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Employment_Status",
+      "type": "nominal",
+      "title": "Employment Status",
+      "axis": {"labelAngle": 0},
+      "sort": ["Employed Full-time", "Employed Part-time", "Unemployed"]
+    },
+    "y": {
+      "field": "Count",
+      "type": "quantitative",
+      "title": "Number of People (thousands)",
+      "axis": {"format": "d"}
+    },
+    "xOffset": {
+      "field": "Qualification",
+      "type": "nominal",
+      "title": "Qualification Level",
+      "sort": {"field": "qual_order", "order": "ascending"}
+    },
+    "color": {
+      "field": "Qualification",
+      "type": "nominal",
+      "title": "Qualification Level",
+      "sort": {"field": "qual_order", "order": "ascending"},
+      "scale": {
+        "scheme": "category10"
+      }
+    },
+    "tooltip": [
+      {"field": "Qualification", "type": "nominal", "title": "Qualification"},
+      {"field": "Employment_Status", "type": "nominal", "title": "Employment Status"},
+      {"field": "Count", "type": "quantitative", "title": "Count", "format": ",.1f"}
+    ]
+  },
+  "config": {
+    "axis": {"grid": true},
+    "view": {"stroke": "transparent"}
+  }
+}

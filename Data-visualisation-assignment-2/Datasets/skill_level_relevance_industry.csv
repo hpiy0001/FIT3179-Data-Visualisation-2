@@ -1,0 +1,115 @@
+﻿Industry,Skill level,Count
+"Agriculture, forestry and fishing",Skill level 1 (highest),161.9
+"Agriculture, forestry and fishing",Skill level 2,14
+"Agriculture, forestry and fishing",Skill level 3,13
+"Agriculture, forestry and fishing",Skill level 4,45.5
+"Agriculture, forestry and fishing",Skill level 5  (lowest),65
+"Agriculture, forestry and fishing",Total(b),301
+Mining,Skill level 1 (highest),71.7
+Mining,Skill level 2,28.4
+Mining,Skill level 3,47.6
+Mining,Skill level 4,101.5
+Mining,Skill level 5  (lowest),11.4
+Mining,Total(b),257.1
+Manufacturing,Skill level 1 (highest),221.1
+Manufacturing,Skill level 2,63.6
+Manufacturing,Skill level 3,221.5
+Manufacturing,Skill level 4,230.6
+Manufacturing,Skill level 5  (lowest),150.9
+Manufacturing,Total(b),897.6
+"Electricity, gas, water and waste services",Skill level 1 (highest),84.1
+"Electricity, gas, water and waste services",Skill level 2,29
+"Electricity, gas, water and waste services",Skill level 3,32.4
+"Electricity, gas, water and waste services",Skill level 4,44.4
+"Electricity, gas, water and waste services",Skill level 5  (lowest),16.8
+"Electricity, gas, water and waste services",Total(b),209.8
+Construction,Skill level 1 (highest),213.2
+Construction,Skill level 2,106.9
+Construction,Skill level 3,635.5
+Construction,Skill level 4,247.4
+Construction,Skill level 5  (lowest),142.7
+Construction,Total(b),1349.1
+Wholesale trade,Skill level 1 (highest),133.9
+Wholesale trade,Skill level 2,26.8
+Wholesale trade,Skill level 3,30.6
+Wholesale trade,Skill level 4,140.4
+Wholesale trade,Skill level 5  (lowest),41.5
+Wholesale trade,Total(b),375.2
+Retail trade,Skill level 1 (highest),132.8
+Retail trade,Skill level 2,181.3
+Retail trade,Skill level 3,69.7
+Retail trade,Skill level 4,224
+Retail trade,Skill level 5  (lowest),649.9
+Retail trade,Total(b),1269.2
+Accommodation and food services,Skill level 1 (highest),19.1
+Accommodation and food services,Skill level 2,247.1
+Accommodation and food services,Skill level 3,40.7
+Accommodation and food services,Skill level 4,267.5
+Accommodation and food services,Skill level 5  (lowest),350.8
+Accommodation and food services,Total(b),931
+"Transport, postal and warehousing",Skill level 1 (highest),106
+"Transport, postal and warehousing",Skill level 2,33.6
+"Transport, postal and warehousing",Skill level 3,26.7
+"Transport, postal and warehousing",Skill level 4,449.4
+"Transport, postal and warehousing",Skill level 5  (lowest),96.4
+"Transport, postal and warehousing",Total(b),716.4
+Information media and telecommunications,Skill level 1 (highest),102
+Information media and telecommunications,Skill level 2,27.6
+Information media and telecommunications,Skill level 3,31.9
+Information media and telecommunications,Skill level 4,34.1
+Information media and telecommunications,Skill level 5  (lowest),10.3
+Information media and telecommunications,Total(b),205.1
+Financial and insurance services,Skill level 1 (highest),252.6
+Financial and insurance services,Skill level 2,71.1
+Financial and insurance services,Skill level 3,33.7
+Financial and insurance services,Skill level 4,155.9
+Financial and insurance services,Skill level 5  (lowest),3.8
+Financial and insurance services,Total(b),514.3
+"Rental, hiring and real estate services",Skill level 1 (highest),47.5
+"Rental, hiring and real estate services",Skill level 2,44.2
+"Rental, hiring and real estate services",Skill level 3,91.7
+"Rental, hiring and real estate services",Skill level 4,31.3
+"Rental, hiring and real estate services",Skill level 5  (lowest),14
+"Rental, hiring and real estate services",Total(b),226.9
+"Professional, scientific and technical services",Skill level 1 (highest),978.5
+"Professional, scientific and technical services",Skill level 2,142.3
+"Professional, scientific and technical services",Skill level 3,59.9
+"Professional, scientific and technical services",Skill level 4,103.6
+"Professional, scientific and technical services",Skill level 5  (lowest),20.4
+"Professional, scientific and technical services",Total(b),1309
+Administrative and support services,Skill level 1 (highest),89.7
+Administrative and support services,Skill level 2,44.5
+Administrative and support services,Skill level 3,54.4
+Administrative and support services,Skill level 4,85.2
+Administrative and support services,Skill level 5  (lowest),155.5
+Administrative and support services,Total(b),431.9
+Public administration and safety,Skill level 1 (highest),391.9
+Public administration and safety,Skill level 2,166.6
+Public administration and safety,Skill level 3,53.7
+Public administration and safety,Skill level 4,219.1
+Public administration and safety,Skill level 5  (lowest),81
+Public administration and safety,Total(b),916.7
+Education and training,Skill level 1 (highest),772.8
+Education and training,Skill level 2,53.8
+Education and training,Skill level 3,53.6
+Education and training,Skill level 4,269.1
+Education and training,Skill level 5  (lowest),35.1
+Education and training,Total(b),1196.9
+Health care and social assistance,Skill level 1 (highest),1033.9
+Health care and social assistance,Skill level 2,261.3
+Health care and social assistance,Skill level 3,52.5
+Health care and social assistance,Skill level 4,822.5
+Health care and social assistance,Skill level 5  (lowest),87.8
+Health care and social assistance,Total(b),2260.9
+Arts and recreation services,Skill level 1 (highest),85.5
+Arts and recreation services,Skill level 2,28.9
+Arts and recreation services,Skill level 3,54.1
+Arts and recreation services,Skill level 4,59.4
+Arts and recreation services,Skill level 5  (lowest),35.1
+Arts and recreation services,Total(b),265.4
+Other services,Skill level 1 (highest),58.1
+Other services,Skill level 2,44.4
+Other services,Skill level 3,256.3
+Other services,Skill level 4,121.5
+Other services,Skill level 5  (lowest),28.9
+Other services,Total(b),509.8

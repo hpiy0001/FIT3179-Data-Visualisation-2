@@ -1,0 +1,64 @@
+# Topic
+
+The impact of education on employment and income prospects
+
+Why? (Describe why your visualisation will be useful and interesting for users)
+
+Clearly visualising the impact that different qualification and educational achievements have on a person's income and employment will allow a person to make a more informed decision when it comes to choosing the level of education they need to invest in or the qualification they need to pursue in order to attain the career and income they desire.
+
+# Story
+
+We start with why having a higher skill level is useful, we use visualisation to show that higher skilled workers make more money and then we move onto showing that someone is more likely to be a higher skilled worker if they have a higher level of education.
+
+We can then also show that people with a higher level of education make more money in general ommitting the level of skill they possess.*
+
+Datasets
+
+16: Highest non-school qualification, Tables 28-32
+
+This allows us to see the type of education someone has and the skill level they have in their education.
+
+Table 5 - Distribution of earnings for employees by educational qualification
+
+This helps visualise the level of income someone can earn based on their education
+
+AIH had a dataset that was discussing the different characteristics of those studying at different levels, like their mental health status etc.
+
+Table 32:
+
+We can show the level of skill someone has in their current job based on their age, sex, the level of education they achieved.
+Skill level is ordinal data (meaning categorical data that is naturally ordered, post graduate is higher than under graduate).
+
+Marks = Rectangular cells arranged in a matrix
+Channels = Position (spatial): Both education level (one axis) and skill level (other axis) use position to encode ordered categorical data
+Color: Intensity/saturation encodes the quantitative value (count or percentage of people in each combination)
+
+Discussions
+
+Does a visualisation showing the amount of people with the different degrees really help? We want to show the impact of education on income and career prospects.
+
+There is data on the different skill level and the earnings of each skill level across the different states. It might tell us which states have the most skilled individuals? Highest earners? Again not really that useful for understanding the relationship between education and income.
+
+TODO:
+
+Learn basics of vega lite
+Learn how to embed vega lite visualisation into website
+Create heatmap using vegalite
+
+VISUALISATION LIST
+
+Visualisation one = heatmap of the level of non-school education someone has achieved and the level of skill that person has in their current job (helps visualise the difference the different qualifications makes in the someone's work skill level)
+
+Visualisation two = grouped bar chart showing the industry someone works in, the level of education they have and the amount of money they earn
+
+Visualisation three = stacked bar chart that shows the most common qualifications across different careers (for example a higher portion of managers seem to have a post graduate qualification vs labourers)
+
+Visualisation four = a map showing the frequency of different education qualifications across the different states (is this going to be a map where we can use a button to change the different 
+
+Visualisation five = a simple visualisation to show that people with a higher skill level make more money (THIS SHOULD BE AT THE START)
+
+Visualisation six = 
+
+# Improvements
+
+- Need to add color gradient to grouped bar charts

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 450,
+  "data": {"url": "qualifications_genders.csv"},
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Qualification",
+      "type": "nominal",
+      "title": "Qualification",
+      "sort": [
+        "Postgraduate Degree",
+        "Graduate Diploma/Graduate Certificate",
+        "Bachelor Degree",
+        "Advanced Diploma/Diploma",
+        "Certificate III/IV",
+        "Certificate I/II",
+        "Certificate n.f.d."
+      ],
+      "axis": {"labelLimit": 300}
+    },
+    "x": {
+      "field": "Count",
+      "type": "quantitative",
+      "title": "Number of People (thousands)",
+      "axis": {"format": "d"}
+    },
+    "color": {
+      "field": "Gender",
+      "type": "nominal",
+      "title": "Gender",
+      "scale": {
+        "domain": ["Male", "Female"],
+        "range": ["#4a90e2", "#e67e22"]
+      }
+    },
+    "yOffset": {
+      "field": "Gender"
+    },
+    "tooltip": [
+      {"field": "Qualification", "title": "Qualification"},
+      {"field": "Gender", "title": "Gender"},
+      {"field": "Count", "title": "Count (thousands)", "format": ".1f"}
+    ]
+  }
+}

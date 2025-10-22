@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <title>The Impact of Education on Employment and Income in Australia</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+            padding: 0;
+            margin: 0;
+        }
+        
+        /* Color Scheme - Professional Blues and Accent */
+        :root {
+            --primary-dark: #1a365d;
+            --primary-blue: #2c5282;
+            --primary-light: #4a90e2;
+            --accent-orange: #e67e22;
+            --accent-green: #27ae60;
+            --text-dark: #2c3e50;
+            --text-medium: #546e7a;
+            --text-light: #7f8c8d;
+            --background-light: #f8f9fa;
+            --background-white: #ffffff;
+            --border-color: #e0e6ed;
+        }
+        
+        /* Header Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .hero-section h1 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero-section .subtitle {
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background-color: var(--background-white);
+        }
+        
+        /* Introduction Section */
+        .introduction {
+            margin-bottom: 60px;
+            padding: 40px;
+            background-color: var(--background-light);
+            border-left: 5px solid var(--primary-light);
+            border-radius: 4px;
+        }
+        
+        .introduction p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        
+        .introduction p:last-child {
+            margin-bottom: 0;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid #2c3e50;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .summary-header h2 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .summary-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #2c3e50);
+            margin-bottom: 1.5rem;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem; /* Increased space before conclusion */
+        }
+
+        .summary-point {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .point-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .point-content h4 {
+            color: #2c3e50;
+            margin-bottom: 0.75rem; /* Increased space between heading and paragraph */
+            font-size: 1.1rem;
+        }
+
+        .point-content p {
+            color: #555;
+            line-height: 1.6; /* Increased line height for better readability */
+            margin: 0;
+            margin-bottom: 0.5rem; /* Space between paragraphs if multiple */
+        }
+
+        .summary-conclusion {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+            margin-top: 1.5rem; /* Added space between grid and conclusion */
+        }
+
+        .summary-conclusion p {
+            margin: 0;
+            color: #2c3e50;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        /* Section Headers */
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--primary-light);
+        }
+        
+        .section-header h2 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+        
+        .section-header .section-subtitle {
+            font-size: 1.1em;
+            color: var(--text-medium);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        /* Visualization Container */
+        .viz-container {
+            background-color: var(--background-white);
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+        }
+        
+        .viz-title {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        
+        .viz-description {
+            font-size: 1em;
+            color: var(--text-medium);
+            margin-bottom: 25px;
+            line-height: 1.7;
+            padding: 15px;
+            background-color: var(--background-light);
+            border-radius: 4px;
+        }
+        
+        .viz-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+        
+        /* Insights Box */
+        .insights-box {
+            margin-top: 30px;
+            padding: 25px;
+            background-color: #fff8e6;
+            border-left: 4px solid var(--accent-orange);
+            border-radius: 4px;
+        }
+        
+        .insights-box h4 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        
+        .insights-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .insights-box li {
+            padding-left: 25px;
+            margin-bottom: 10px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .insights-box li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+        
+        /* Footer / Metadata */
+        .metadata {
+            margin-top: 80px;
+            padding: 40px;
+            background-color: var(--background-light);
+            border-radius: 8px;
+            border-top: 3px solid var(--primary-blue);
+        }
+        
+        .metadata h3 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+        
+        .metadata p {
+            font-size: 0.95em;
+            color: var(--text-medium);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .metadata strong {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 20px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2em;
+            }
+            
+            .hero-section .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .container {
+                padding: 40px 20px;
+            }
+            
+            .viz-container {
+                padding: 25px;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>The Impact of Education on Employment and Income</h1>
+        <p class="subtitle">Understanding how educational qualifications influence career outcomes, skill levels, and earnings in the Australian workforce</p>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Introduction -->
+        <div class="introduction">
+            <p><strong>Education is widely recognized as a key driver of economic opportunity and social mobility.</strong> This visualization explores the relationship between educational qualifications and employment outcomes in Australia, examining how different levels of education correlate with job skill levels, occupational categories, and earning potential.</p>
+            <p>Using data from the Australian workforce, we analyze patterns across postgraduate degrees, bachelor's degrees, diplomas, certificates, and workers without formal qualifications to understand which educational pathways lead to higher-skilled positions and greater financial rewards.</p>
+        </div>
+
+            <!-- Executive Summary -->
+    <div class="executive-summary">
+        <div class="summary-header">
+            <h2>Executive Summary</h2>
+        </div>
+        <div class="summary-content">
+            <p>This analysis reveals how educational qualifications shape employment outcomes across Australia's workforce through four key dimensions: <strong>skill levels, industries, occupations, and demographics</strong>.</p>
+            
+            <p><br>Higher qualifications enable access to higher-skilled jobs, with Skill Level 1 positions paying nearly triple Skill Level 5 roles. Bachelor and postgraduate degrees dominate the highest skill tiers, though skill level relevance varies significantly by industry—healthcare prioritises Skill Level 1 while retail emphasises Skill Level 5.</p>
+            
+            <p><br>Educational returns depend heavily on industry context. Mining offers premium earnings across all qualifications, while service sectors show minimal educational premiums. Managers and Professionals—the highest-paid occupations—are dominated by degree holders, whereas vocational certificates support middle-income trades and technical roles.</p>
+            
+            <p><br>Higher education correlates strongly with employment stability, with postgraduate degrees achieving 76% full-time employment rates. Gender patterns show females dominating higher education while males lead vocational training. Education follows predictable life patterns, with bachelor degrees peaking at ages 18-19 and postgraduate studies rising through the mid-20s.</p>
+            
+            <p class="summary-conclusion">The evidence demonstrates that educational investment pays dividends through access to higher-skilled, better-paid work, though returns vary substantially by industry choice and occupational pathway.</p>
+        </div>
+    </div>
+
+        <!-- Income across skill levels -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Job Skill Level and Earning Potential</h2>
+                <p class="section-subtitle">The relationship between skill requirements and weekly earnings</p>
+            </div>
+            
+            <div class="viz-container">
+                <h3 class="viz-title">Average Weekly Earnings by Job Skill Level</h3>
+                <p class="viz-description">This line chart shows how the average weekly income of a person changes as the skill level of their current job changes. 
+                    <br><br><strong>Skill level 1 jobs</strong>: the highest skill level, including occupations such as pharmacists, architects, school principals, farm managers, and arts professionals
+                    <br><strong>Skill level 2 jobs</strong>: includes occupations such as restaurant managers, finance brokers, medical lab technicians and welfare support workers.
+                    <br><strong>Skill level 3 jobs</strong>: includes occupations such as plumbers, hairdressers and butchers.
+                    <br><strong>Skill level 4 jobs</strong>: includes occupations such as receptionists, delivery drivers, and miners.
+                    <br><strong>Skill level 5 jobs</strong>: lowest skill level
+                </p>
+                <div class="viz-content" id="skill_level_impact_linechart"></div>
+                
+                <div class="insights-box">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>Strong correlation between skill and pay:</strong> Skill Level 1 workers earn nearly 3x more than Skill Level 5 workers ($1,944 vs $700 per week)</li>
+                        <li><strong>Steep earnings gradient:</strong> Each step down in skill level corresponds to a significant decrease in average earnings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill level relevance across industries -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Job Skill Level and Job Industry</h2>
+                <p class="section-subtitle">The relevance of the 5 different skill levels across 19 different industries</p>
+            </div>
+            
+            <div class="viz-container">
+                <h3 class="viz-title">Skill level relevance across industries</h3>
+                <p class="viz-description">This stacked barchart shows the amount of people possesing each of the different 5 skill levels across the 19 different industries. In essence it depicts which skill levels are most/least common for each industry, which acts as a proxy for the most/least relevant skill levels. For example as per the 
+                    visualisation in the health care and social assistance industry, the most common skill level is 1 and the least common is 3, whereas in the retail trade industry the most common skill level is 5 and the least common is 3. This emphasizes that there isn't a universally common/important skill level, skill level 1 might be 
+                    the most relevant in some industries whilst also being the least relevant in other industries, therefore it's important to recognise which skill level is most common in the industry relevant to you before determing the education qualification most relevant to that skill level.
+                </p>
+                <div class="viz-content" id="skill_level_relevance_industry_barchart"></div>
+                
+                <div class="insights-box">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>Skill level importance varies by industry:</strong> Healthcare and social assistance shows Skill Level 1 as most common and Skill Level 3 as least common, while retail trade shows the opposite pattern—Skill Level 5 dominates and Skill Level 3 is least common. This demonstrates there is no universally "important" skill level across all sectors.</li>
+                        <li><strong>Industry-specific patterns matter for career planning:</strong> Before determining which educational qualification to pursue, identify which skill level is most prevalent in your target industry. A qualification relevant for high-skill positions in one industry may be less valuable in sectors dominated by different skill requirements.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>        
+
+        <!-- The education qualificatin relevant for each skill level -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Education and Job Skill Level</h2>
+                <p class="section-subtitle">How educational qualifications relate to the skill requirements of jobs</p>
+            </div>
+            
+            <div class="viz-container">
+                <h3 class="viz-title">Qualification Composition by Skill Level</h3>
+                <p class="viz-description">This heatmap shows the percentage distribution of 7 different educational qualifications across 5 skill levels. Skill Level 1 represents the highest-skilled jobs whilst Skill Level 5 represents lower-skilled positions. The color intensity indicates what proportion of workers at each skill level hold each type of qualification.</p>
+                <div class="viz-content" id="skill_level_relevance_heatmap"></div>
+                
+                <div class="insights-box">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>Higher education leads to higher earnings through skill level:</strong> Bachelor and postgraduate degrees account for 73% of Skill Level 1 positions, which earn nearly 3x more than Skill Level 5 ($1,944 vs $700 weekly). This demonstrates the direct pathway from education to higher-skilled, better-paid work.</li>
+                        <li><strong>Skill level relevance is industry-specific:</strong> While Certificate III/IV qualifications dominate Skill Level 3 positions (63%), the importance of each skill level varies by industry. Healthcare emphasizes Skill Level 1, while retail prioritizes Skill Level 5—meaning career planning requires understanding both the qualification-to-skill relationship AND which skill levels your target industry values.</li>
+                        <li><strong>Educational pathways must align with industry needs:</strong> Before investing in a qualification, identify which skill levels dominate your target industry, then determine which education credentials lead to those skill levels. A postgraduate degree valuable for Skill Level 1 healthcare roles may be less relevant in retail sectors where Skill Level 5 (most commonly held by Certificate III/IV holders) is most prevalent.</li>
+                        <li><strong>Postgraduate credentials are highly specialized for top-tier roles:</strong> While postgraduate degrees show strong relevance at Skill Level 1 (25%), they decline sharply across other skill levels and are virtually irrelevant at Skill Levels 3-5. Similarly, Graduate Diploma/Graduate Certificate shows minimal relevance across all skill levels, indicating these are niche credentials for specific professional advancement rather than broad workforce entry.</li>
+                        <li><strong>Certificate III/IV is the versatile mid-level credential:</strong> This qualification shows significant representation across Skill Levels 3, 4, and 5, making it a flexible credential for various workforce entry points, while Certificate I/II and Certificate n.f.d. show minimal relevance across all skill levels.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Weekly income across the different industries -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Industry Earnings by Education</h2>
+                <p class="section-subtitle">Average weekly earnings across industries for different qualification levels</p>
+            </div>
+            
+            <div class="viz-container">
+                <h3 class="viz-title">Weekly Earnings by Industry and Qualification</h3>
+                <p class="viz-description">Select an educational qualification level from the dropdown menu to see how average weekly earnings vary across different industries. This interactive chart reveals which industries offer the highest financial returns for each qualification type, and demonstrates how different education qualifications impact (increase or decrease) the weekly income someone can earn within each specific industry.</p>
+                <div class="viz-content" id="barchardrop"></div>
+                
+                <div class="insights-box">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>Mining leads in earnings:</strong> Consistently shows the highest average weekly earnings across most qualification levels ($3,400+ for postgraduates)</li>
+                        <li><strong>Industry variation matters:</strong> The same qualification can yield vastly different earnings depending on the industry sector</li>
+                        <li><strong>Lower returns in service sectors:</strong> Accommodation, food services, and retail consistently show lower earnings regardless of qualification</li>
+                        <li><strong>Higher qualifications don't always guarantee higher earnings:</strong> In mining, graduate diploma holders ($3,433) actually earn slightly more than postgraduate degree holders ($3,400), while bachelor's degree holders earn $2,742—demonstrating that educational progression doesn't always translate to proportional salary increases, particularly in industries where specialized diplomas may be more valued than research degrees.</li>
+                        <li><strong>Service sectors show minimal educational premiums:</strong> In accommodation and food services, postgraduate holders ($1,266) earn only $266 more weekly than Certificate III/IV holders ($1,000), and in retail the gap is just $174—indicating that pursuing higher education yields limited financial returns in these sectors compared to the $700+ premiums seen in mining and professional services.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- General Occupation Earnings -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Earnings by Broad Occupational Group</h2>
+                <p class="section-subtitle">Average earnings across major occupation categories</p>
+            </div>
+            
+            <div class="viz-container">
+                <h3 class="viz-title">Average Weekly Earnings by General Occupation</h3>
+                <p class="viz-description">This simplified view aggregates occupations into eight broad categories, providing a clear overview of earning potential across major workforce segments.</p>
+                <div class="viz-content" id="career_earnings_simple_lollipop"></div>
+                
+                <div class="insights-box">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>Managers and professionals top the list:</strong> Both groups earn over $2,400 per week on average</li>
+                        <li><strong>Middle-tier earners:</strong> Technical, clerical, and operator roles cluster around $1,600-$1,800 per week</li>
+                        <li><strong>Service and labor roles lag behind:</strong> Labourers, sales workers, and community service workers earn significantly less, reflecting skill and education requirements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Detailed Occupation Earnings -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Earnings Across Specific Occupations</h2>
+                <p class="section-subtitle">Comparing average weekly earnings for specific job categories</p>
+            </div>
+            
+            <div class="viz-container">
+                <h3 class="viz-title">Average Weekly Earnings by Detailed Occupation</h3>
+                <p class="viz-description">This lollipop chart ranks 43 occupations categories by their average weekly earnings, from highest to lowest. Showing the relationship between the occupation someone has and the weekly income they make.</p>
+                <div class="viz-content" id="career_earnings_detailed_lollipop"></div>
+                
+                <div class="insights-box">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>Executive roles lead earnings:</strong> Chief Executives and General Managers earn over $3,300 per week on average</li>
+                        <li><strong>ICT professionals command premium salaries:</strong> ICT Professionals rank among the top earners at over $2,600 per week</li>
+                        <li><strong>Wide earnings dispersion:</strong> Nearly 3:1 ratio between the highest and lowest-earning occupations, highlighting significant income inequality across the workforce</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Occupation and Education -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Educational Pathways to Occupations</h2>
+                <p class="section-subtitle">Understanding which qualifications lead to different career paths</p>
+            </div>
+            
+            <div class="viz-container">
+                <h3 class="viz-title">Qualification Distribution by Occupation</h3>
+                <p class="viz-description">This normalized heatmap shows what percentage of workers in each occupation hold each type of qualification. Darker colors indicate a higher concentration of that qualification within the occupation, revealing which educational backgrounds are most relevant for specific career paths.</p>
+                <div class="viz-content" id="occupation_relevance_heatmap"></div>
+                
+                <div class="insights-box">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>Higher Education Drives Higher Earnings:</strong> Managers ($2,625) and Professionals ($2,424), the two highest-paid occupations, show the strongest representation of bachelor and postgraduate degrees</li>
+                        <li><strong>Vocational Training Supports Middle-Income Trades:</strong> Technicians and Trades Workers ($1,786) and Machinery Operators ($1,814) show heavy reliance on Certificate III/IV qualifications</li>
+                        <li><strong>Limited Qualifications Constrain Earnings:</strong> Labourers ($1,452), the lowest-paid occupation, have the highest proportion of workers without formal qualifications (61% of the occupation)</li>
+                        <li><strong>Service Sector Shows Diverse Educational Pathways:</strong> Community and Personal Service Workers ($1,593) display a balanced mix of bachelor's degrees, Certificate III/IV, and advanced diplomas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education and Employment Status -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Education and Employment Outcomes</h2>
+                <p class="section-subtitle">Employment status distribution across educational qualification levels</p>
+            </div>
+            
+            <div class="viz-container">
+                <h3 class="viz-title">Employment Status by Educational Qualification</h3>
+                <p class="viz-description">This grouped bar chart shows the distribution of employment status (full-time, part-time, unemployed) for each educational qualification level. The chart reveals how employment status vary across different education levels.</p>
+                <div class="viz-content" id="employment_status_bar_grouped"></div>
+                
+                <div class="insights-box">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>Bachelor degrees dominate employment:</strong> Bachelor degree holders have the highest overall employment numbers (3,448k employed), with strong full-time representation (2,523k)</li>
+                        <li><strong>Postgraduate success in full-time employment:</strong> Postgraduate degrees show the highest proportion of full-time employment relative to their total numbers</li>
+                        <li><strong>Certificate III/IV strong workforce participation:</strong> Vocational certificate holders show substantial full-time employment (1,814k), second only to bachelor degrees</li>
+                        <li><strong>Graduate diplomas show lowest unemployment:</strong> Graduate diploma/certificate holders have remarkably low unemployment rates (only 3.3k unemployed)</li>
+                        <li><strong>Higher education correlates with employment stability:</strong> Postgraduate, graduate diploma, and bachelor degrees all show lower unemployment rates compared to vocational certificates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Education and gender -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Education Qualifications and Gender</h2>
+                <p class="section-subtitle">Understanding gender distributions across different education qualification levels</p>
+            </div>
+            
+            <div class="viz-container">
+                <h3 class="viz-title">Education Qualification Distribution by Gender</h3>
+                <p class="viz-description">Distribution of male and female students across different qualification levels, showing enrollment patterns in higher education versus vocational training.</p>
+                <div class="viz-content" id="qualification_gender_barchart"></div>
+                
+                <div class="insights-box">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>Male dominance in vocational training:</strong> Males significantly outnumber females in Certificate III/IV qualifications (1,976k vs 1,219k)</li>
+                        <li><strong>Female lead in higher education:</strong> Females outnumber males in Bachelor Degrees (2,335k vs 1,837k) and Postgraduate Degrees (932k vs 833k)</li>
+                        <li><strong>Strong female representation in graduate certificates:</strong> Females nearly double male enrollment in Graduate Diploma/Graduate Certificate programs (432k vs 240k)</li>
+                        <li><strong>Balanced enrollment in diplomas:</strong> Advanced Diploma/Diploma shows relatively balanced gender distribution (1,031k females vs 855k males)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education and location -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Geographic Distribution of Qualifications</h2>
+                <p class="section-subtitle">Qualification holders across Australian states and territories</p>
+            </div>
+            
+            <div class="viz-container">
+                <h3 class="viz-title">Qualifications by State</h3>
+                <p class="viz-description">Select a qualification level to see its geographic distribution across Australia. Darker shades indicate higher numbers of qualification holders in that state.</p>
+                
+                <!-- Dropdown selector -->
+                <div style="margin-bottom: 20px;">
+                    <label for="map-selector" style="font-weight: 600; margin-right: 10px;">Select Qualification:</label>
+                    <select id="map-selector" style="padding: 8px; font-size: 14px; border-radius: 4px; border: 1px solid #ccc;">
+                        <option value="bachelor">Bachelor Degree</option>
+                        <option value="postgrad">Postgraduate Degree</option>
+                        <option value="grad_diploma">Graduate Diploma/Certificate</option>
+                        <option value="diploma">Advanced Diploma/Diploma</option>
+                        <option value="cert34">Certificate III/IV</option>
+                        <option value="cert12">Certificate I/II</option>
+                        <option value="cert_nfd">Certificate n.f.d.</option>
+                    </select>
+                </div>
+                
+                <div class="viz-content" id="choropleth_map"></div>
+                
+                <div class="insights-box">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>NSW and Victoria dominate:</strong> These states have the highest numbers across all qualification types due to larger populations</li>
+                        <li><strong>ACT punches above its weight:</strong> Despite its small size, ACT shows high postgraduate degree numbers (government sector)</li>
+                        <li><strong>Regional variation:</strong> NT and Tasmania show significantly lower numbers, reflecting smaller populations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Education and age -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Educational Pathways Across the Lifespan</h2>
+                <p class="section-subtitle">How enrollment in different qualification types changes with age</p>
+            </div>
+            
+            <div class="viz-container">
+                <h3 class="viz-title">Student Enrollment by Age and Qualification Type</h3>
+                <p class="viz-description">This stacked area chart shows the educational journey across different life stages. The total height represents all students at each age, while the colored areas show the composition of qualification types. Notice how bachelor degrees dominate the late teens and early twenties, while postgraduate enrollments rise in the mid-to-late twenties.</p>
+                <div class="viz-content" id="age_enrollment_area"></div>
+                
+                <div class="insights-box">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>Bachelor degrees peak at ages 18-19:</strong> Traditional undergraduate pathway dominates with over 158,000 students at age 19</li>
+                        <li><strong>Postgraduate coursework rises in mid-20s:</strong> Peak enrollment at age 23 (59,000 students) as bachelor graduates continue education</li>
+                        <li><strong>Vocational training starts early:</strong> Sub-bachelor qualifications show significant enrollment at age 17, offering alternative pathways</li>
+                        <li><strong>Mature-age learning persists:</strong> Even the 60+ age group shows over 10,000 students pursuing qualifications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="vega_lite_vis.js"></script>
+</body>
+</html>

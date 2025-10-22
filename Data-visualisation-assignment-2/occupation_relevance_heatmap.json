@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 400,
+  "data": {"url": "occupation_qualification_relevance.csv"},
+  "transform": [
+    {
+      "joinaggregate": [
+        {"op": "sum", "field": "Count", "as": "occupation_total"}
+      ],
+      "groupby": ["Occupation"]
+    },
+    {
+      "calculate": "(datum.Count / datum.occupation_total) * 100",
+      "as": "percentage"
+    }
+  ],
+  "mark": {"type": "rect", "stroke": "white", "strokeWidth": 2},
+  "encoding": {
+    "x": {
+      "field": "Occupation",
+      "type": "nominal",
+      "title": "Occupation",
+      "axis": {
+        "labelAngle": -45,
+        "labelLimit": 200
+      }
+    },
+    "y": {
+      "field": "Qualification",
+      "type": "ordinal",
+      "title": "Qualification",
+      "sort": [
+        "Postgraduate Degree",
+        "Graduate Diploma / Graduate Certificate",
+        "Bachelor Degree",
+        "Advanced Diploma/Diploma",
+        "Certificate III/IV",
+        "Certificate I/II",
+        "Certificate n.f.d.",
+        "Without non-school qualification"
+      ]
+    },
+    "color": {
+      "field": "percentage",
+      "type": "quantitative",
+      "scale": {"scheme": "blues"},
+      "title": "Percentage (%)",
+      "legend": {"format": ".1f"}
+    },
+    "tooltip": [
+      {"field": "Occupation", "title": "Occupation"},
+      {"field": "Qualification", "title": "Qualification"},
+      {"field": "percentage", "title": "Percentage", "format": ".1f"},
+      {"field": "Count", "title": "Count (thousands)", "format": ".1f"}
+    ]
+  },
+  "config": {
+    "axis": {"labelLimit": 300}
+  }
+}

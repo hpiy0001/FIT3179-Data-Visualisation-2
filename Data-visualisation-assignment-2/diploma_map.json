@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "layer": [{
+    "data": {
+      "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+      "format": {"type": "json", "property": "features"}
+    },
+    "transform": [
+      {
+        "lookup": "properties.STATE_NAME",
+        "from": {
+          "data": {
+            "values": [
+              {"State": "New South Wales", "Count": 586.3},
+              {"State": "Victoria", "Count": 504.2},
+              {"State": "Queensland", "Count": 400},
+              {"State": "South Australia", "Count": 119.9},
+              {"State": "Western Australia", "Count": 194.5},
+              {"State": "Tasmania", "Count": 34.9},
+              {"State": "Northern Territory", "Count": 12.6},
+              {"State": "Australian Capital Territory", "Count": 32.6}
+            ]
+          },
+          "key": "State",
+          "fields": ["Count"]
+        }
+      }
+    ],
+    "projection": {
+      "type": "mercator",
+      "center": [133, -28],
+      "scale": 800
+    },
+    "mark": {
+      "type": "geoshape",
+      "stroke": "white",
+      "strokeWidth": 2
+    },
+    "encoding": {
+      "color": {
+        "field": "Count",
+        "type": "quantitative",
+        "scale": {
+          "scheme": "blues",
+          "domain": [0, 1500]
+        },
+        "title": "People (thousands)"
+      },
+      "tooltip": [
+        {"field": "properties.STATE_NAME", "title": "State"},
+        {"field": "Count", "title": "Advanced Diploma (thousands)", "format": ".1f"}
+      ]
+    }
+  }]
+}

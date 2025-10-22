@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stacked bar chart showing workforce composition by industry and skill level",
+  "width": 700,
+  "height": 600,
+  "data": {
+    "url": "skill_level_relevance_industry.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "calculate": "if(datum['Skill level'] == 'Skill level 1', 1, if(datum['Skill level'] == 'Skill level 2', 2, if(datum['Skill level'] == 'Skill level 3', 3, if(datum['Skill level'] == 'Skill level 4', 4, 5))))",
+      "as": "skill_order"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Industry",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "Industry",
+      "axis": {"labelLimit": 200}
+    },
+    "x": {
+      "field": "Count",
+      "type": "quantitative",
+      "title": "Number of Workers (thousands)",
+      "stack": true
+    },
+    "color": {
+      "field": "Skill level",
+      "type": "nominal",
+      "sort": ["Skill level 1", "Skill level 2", "Skill level 3", "Skill level 4", "Skill level 5"],
+      "scale": {
+        "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]
+      },
+      "title": "Skill Level",
+      "legend": {
+        "title": "Skill Level"
+      }
+    },
+    "order": {
+      "field": "skill_order",
+      "type": "quantitative",
+      "sort": "ascending"
+    },
+    "tooltip": [
+      {"field": "Industry", "type": "nominal", "title": "Industry"},
+      {"field": "Skill level", "type": "nominal", "title": "Skill Level"},
+      {"field": "Count", "type": "quantitative", "title": "Count", "format": ".1f"}
+    ]
+  },
+  "title": "Workforce Composition by Industry and Skill Level",
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "title": {"fontSize": 16, "anchor": "start"}
+  }
+}

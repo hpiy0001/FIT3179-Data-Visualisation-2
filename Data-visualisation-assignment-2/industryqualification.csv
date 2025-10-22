@@ -1,0 +1,134 @@
+Industry,Qualification,Count
+Agriculture, forestry and fishing,Postgraduate Degree,1805.67
+Agriculture, forestry and fishing,Graduate Diploma or Certificate,0.00
+Agriculture, forestry and fishing,Bachelor Degree,1252.15
+Agriculture, forestry and fishing,Advanced Diploma or Diploma,1023.86
+Agriculture, forestry and fishing,Certificate III or IV,1258.23
+Agriculture, forestry and fishing,Other non-school qualification,1218.61
+Agriculture, forestry and fishing,Without non-school qualification,1127.23
+Mining,Postgraduate Degree,3399.59
+Mining,Graduate Diploma or Certificate,3432.94
+Mining,Bachelor Degree,2742.26
+Mining,Advanced Diploma or Diploma,2772.61
+Mining,Certificate III or IV,2700.84
+Mining,Other non-school qualification,2973.67
+Mining,Without non-school qualification,2000.41
+Manufacturing,Postgraduate Degree,2075.14
+Manufacturing,Graduate Diploma or Certificate,2609.53
+Manufacturing,Bachelor Degree,1620.00
+Manufacturing,Advanced Diploma or Diploma,1481.79
+Manufacturing,Certificate III or IV,1600.00
+Manufacturing,Other non-school qualification,1493.01
+Manufacturing,Without non-school qualification,1162.64
+Electricity, gas, water and waste services,Postgraduate Degree,2497.61
+Electricity, gas, water and waste services,Graduate Diploma or Certificate,1886.89
+Electricity, gas, water and waste services,Bachelor Degree,1943.17
+Electricity, gas, water and waste services,Advanced Diploma or Diploma,1897.70
+Electricity, gas, water and waste services,Certificate III or IV,1855.39
+Electricity, gas, water and waste services,Other non-school qualification,2104.81
+Electricity, gas, water and waste services,Without non-school qualification,1499.26
+Construction,Postgraduate Degree,1620.68
+Construction,Graduate Diploma or Certificate,1530.37
+Construction,Bachelor Degree,1993.59
+Construction,Advanced Diploma or Diploma,1690.40
+Construction,Certificate III or IV,1600.00
+Construction,Other non-school qualification,1592.70
+Construction,Without non-school qualification,1200.00
+Wholesale trade,Postgraduate Degree,2466.60
+Wholesale trade,Graduate Diploma or Certificate,2213.28
+Wholesale trade,Bachelor Degree,1739.67
+Wholesale trade,Advanced Diploma or Diploma,1369.21
+Wholesale trade,Certificate III or IV,1502.88
+Wholesale trade,Other non-school qualification,1502.87
+Wholesale trade,Without non-school qualification,1394.67
+Retail trade,Postgraduate Degree,1274.03
+Retail trade,Graduate Diploma or Certificate,1077.51
+Retail trade,Bachelor Degree,1127.82
+Retail trade,Advanced Diploma or Diploma,1031.89
+Retail trade,Certificate III or IV,1100.00
+Retail trade,Other non-school qualification,1119.61
+Retail trade,Without non-school qualification,671.55
+Accommodation and food services,Postgraduate Degree,1265.86
+Accommodation and food services,Graduate Diploma or Certificate,999.71
+Accommodation and food services,Bachelor Degree,984.39
+Accommodation and food services,Advanced Diploma or Diploma,1144.55
+Accommodation and food services,Certificate III or IV,1000.00
+Accommodation and food services,Other non-school qualification,722.21
+Accommodation and food services,Without non-school qualification,402.81
+Transport, postal and warehousing,Postgraduate Degree,1857.43
+Transport, postal and warehousing,Graduate Diploma or Certificate,2172.70
+Transport, postal and warehousing,Bachelor Degree,1633.13
+Transport, postal and warehousing,Advanced Diploma or Diploma,1699.51
+Transport, postal and warehousing,Certificate III or IV,1623.15
+Transport, postal and warehousing,Other non-school qualification,1407.67
+Transport, postal and warehousing,Without non-school qualification,1317.43
+Information Media and telecommunications,Postgraduate Degree,1981.55
+Information Media and telecommunications,Graduate Diploma or Certificate,1575.96
+Information Media and telecommunications,Bachelor Degree,1682.26
+Information Media and telecommunications,Advanced Diploma or Diploma,1734.25
+Information Media and telecommunications,Certificate III or IV,1657.49
+Information Media and telecommunications,Other non-school qualification,1819.71
+Information Media and telecommunications,Without non-school qualification,1214.85
+Financial and insurance services,Postgraduate Degree,2243.33
+Financial and insurance services,Graduate Diploma or Certificate,2074.98
+Financial and insurance services,Bachelor Degree,1900.00
+Financial and insurance services,Advanced Diploma or Diploma,1714.74
+Financial and insurance services,Certificate III or IV,1600.00
+Financial and insurance services,Other non-school qualification,1714.49
+Financial and insurance services,Without non-school qualification,1442.00
+Rental, hiring and real estate services,Postgraduate Degree,2020.61
+Rental, hiring and real estate services,Graduate Diploma or Certificate,1797.83
+Rental, hiring and real estate services,Bachelor Degree,1750.00
+Rental, hiring and real estate services,Advanced Diploma or Diploma,1293.43
+Rental, hiring and real estate services,Certificate III or IV,1531.73
+Rental, hiring and real estate services,Other non-school qualification,1287.47
+Rental, hiring and real estate services,Without non-school qualification,1210.50
+Professional, scientific and technical services,Postgraduate Degree,2176.27
+Professional, scientific and technical services,Graduate Diploma or Certificate,2211.56
+Professional, scientific and technical services,Bachelor Degree,1923.00
+Professional, scientific and technical services,Advanced Diploma or Diploma,1750.00
+Professional, scientific and technical services,Certificate III or IV,1444.15
+Professional, scientific and technical services,Other non-school qualification,1382.43
+Professional, scientific and technical services,Without non-school qualification,1200.00
+Administrative and support services,Postgraduate Degree,1202.64
+Administrative and support services,Graduate Diploma or Certificate,1619.35
+Administrative and support services,Bachelor Degree,1324.77
+Administrative and support services,Advanced Diploma or Diploma,1599.89
+Administrative and support services,Certificate III or IV,1458.73
+Administrative and support services,Other non-school qualification,1361.31
+Administrative and support services,Without non-school qualification,1100.00
+Public administration and safety,Postgraduate Degree,2175.96
+Public administration and safety,Graduate Diploma or Certificate,1943.39
+Public administration and safety,Bachelor Degree,1869.09
+Public administration and safety,Advanced Diploma or Diploma,1699.08
+Public administration and safety,Certificate III or IV,1674.05
+Public administration and safety,Other non-school qualification,1569.95
+Public administration and safety,Without non-school qualification,1487.06
+Education and training,Postgraduate Degree,1861.46
+Education and training,Graduate Diploma or Certificate,1732.24
+Education and training,Bachelor Degree,1662.00
+Education and training,Advanced Diploma or Diploma,1219.44
+Education and training,Certificate III or IV,1105.87
+Education and training,Other non-school qualification,1004.76
+Education and training,Without non-school qualification,824.96
+Health care and social assistance,Postgraduate Degree,1712.77
+Health care and social assistance,Graduate Diploma or Certificate,1431.91
+Health care and social assistance,Bachelor Degree,1460.75
+Health care and social assistance,Advanced Diploma or Diploma,1206.77
+Health care and social assistance,Certificate III or IV,1050.00
+Health care and social assistance,Other non-school qualification,1096.96
+Health care and social assistance,Without non-school qualification,900.00
+Arts and recreation services,Postgraduate Degree,1639.58
+Arts and recreation services,Graduate Diploma or Certificate,1430.35
+Arts and recreation services,Bachelor Degree,1374.28
+Arts and recreation services,Advanced Diploma or Diploma,1289.19
+Arts and recreation services,Certificate III or IV,1143.28
+Arts and recreation services,Other non-school qualification,763.65
+Arts and recreation services,Without non-school qualification,659.83
+Other services,Postgraduate Degree,1859.88
+Other services,Graduate Diploma or Certificate,2226.90
+Other services,Bachelor Degree,1315.46
+Other services,Advanced Diploma or Diploma,1099.25
+Other services,Certificate III or IV,1370.26
+Other services,Other non-school qualification,1203.44
+Other services,Without non-school qualification,972.28

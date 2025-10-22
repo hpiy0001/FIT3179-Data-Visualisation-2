@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 400,
+  "data": {"url": "skill_level_relevance.csv"},
+  "transform": [
+    {
+      "joinaggregate": [
+        {"op": "sum", "field": "count", "as": "skill_total"}
+      ],
+      "groupby": ["skill_level"]
+    },
+    {
+      "calculate": "(datum.count / datum.skill_total) * 100",
+      "as": "percentage"
+    }
+  ],
+  "mark": {"type": "rect", "stroke": "white", "strokeWidth": 2},
+  "encoding": {
+    "x": {
+      "field": "skill_level",
+      "type": "ordinal",
+      "title": "Skill Level",
+      "sort": ["1", "2", "3", "4", "5"]
+    },
+    "y": {
+      "field": "education_level",
+      "type": "ordinal",
+      "title": "Education Level",
+      "sort": [
+        "Postgraduate Degree",
+        "Graduate Diploma/Graduate Certificate",
+        "Bachelor Degree",
+        "Advanced Diploma/Diploma",
+        "Certificate III/IV",
+        "Certificate I/II",
+        "Certificate n.f.d."
+      ]
+    },
+    "color": {
+      "field": "percentage",
+      "type": "quantitative",
+      "scale": {"scheme": "blues"},
+      "title": "Percentage (%)",
+      "legend": {"format": ".1f"}
+    },
+    "tooltip": [
+      {"field": "education_level", "title": "Education Level"},
+      {"field": "skill_level", "title": "Skill Level"},
+      {"field": "percentage", "title": "Percentage", "format": ".1f"},
+      {"field": "count", "title": "Count (thousands)", "format": ".1f"}
+    ]
+  },
+  "config": {
+    "axis": {"labelLimit": 300}
+  }
+}

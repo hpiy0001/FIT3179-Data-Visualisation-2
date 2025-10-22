@@ -1,0 +1,117 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "NSW",
+        "STATE_CODE": "NSW"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [141.0, -29.0], [153.6, -28.2], [153.6, -37.5], [150.0, -37.5], 
+          [141.0, -34.0], [141.0, -29.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "VIC",
+        "STATE_CODE": "VIC"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [141.0, -34.0], [150.0, -37.5], [150.0, -39.2], 
+          [141.0, -39.0], [141.0, -34.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "QLD",
+        "STATE_CODE": "QLD"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [138.0, -10.7], [153.6, -10.7], [153.6, -28.2], 
+          [141.0, -29.0], [138.0, -29.0], [138.0, -10.7]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "SA",
+        "STATE_CODE": "SA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [129.0, -26.0], [141.0, -26.0], [141.0, -38.0], 
+          [129.0, -38.0], [129.0, -26.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "WA",
+        "STATE_CODE": "WA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [113.0, -13.5], [129.0, -13.5], [129.0, -35.0], 
+          [113.0, -35.0], [113.0, -13.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "TAS",
+        "STATE_CODE": "TAS"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [144.0, -40.0], [148.5, -40.0], [148.5, -43.7], 
+          [144.0, -43.7], [144.0, -40.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "NT",
+        "STATE_CODE": "NT"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [129.0, -10.9], [138.0, -10.9], [138.0, -26.0], 
+          [129.0, -26.0], [129.0, -10.9]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "ACT",
+        "STATE_CODE": "ACT"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [148.7, -35.1], [149.4, -35.1], [149.4, -35.9], 
+          [148.7, -35.9], [148.7, -35.1]
+        ]]
+      }
+    }
+  ]
+}

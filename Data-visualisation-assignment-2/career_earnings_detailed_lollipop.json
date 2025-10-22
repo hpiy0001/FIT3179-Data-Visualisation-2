@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 800,
+  "data": {"url": "career_earnings_detailed.csv"},
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#1f77b4",
+        "size": 2
+      },
+      "encoding": {
+        "y": {
+          "field": "Occupation",
+          "type": "nominal",
+          "title": "Occupation",
+          "sort": {"field": "Earnings", "order": "descending"},
+          "axis": {"labelLimit": 300}
+        },
+        "x": {
+          "field": "Earnings",
+          "type": "quantitative",
+          "title": "Average Weekly Earnings ($)",
+          "axis": {"format": "$,.0f"},
+          "scale": {"zero": true}
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 150,
+        "color": "#1f77b4"
+      },
+      "encoding": {
+        "y": {
+          "field": "Occupation",
+          "type": "nominal",
+          "sort": {"field": "Earnings", "order": "descending"}
+        },
+        "x": {
+          "field": "Earnings",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {"field": "Occupation", "title": "Occupation"},
+          {"field": "Earnings", "title": "Weekly Earnings", "format": "$,.2f"}
+        ]
+      }
+    }
+  ]
+}
